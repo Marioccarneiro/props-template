@@ -1,11 +1,20 @@
-function Carro() {
+function Carro(props) {
+
+  const verificaCarroFlex = () => {
+    if(props.dadosCarro.flex === true) {
+      return "Sim"
+    } else {
+      return "Não"
+    }
+  }
+
   return (
     <div>
-      <h2>Volksvagem</h2>
+      <h2>{props.dadosCarro.nome}</h2>
       <ul>
-        <li>Cor: Azul</li>
-        <li>Ano: 2018</li>
-        <li>Flex: Não</li>
+        <li>Cor: {props.dadosCarro.cor}</li>
+        <li>Ano: {props.dadosCarro.ano}</li>
+        <li>Flex: {verificaCarroFlex()}</li>
       </ul>
     </div>
   );
